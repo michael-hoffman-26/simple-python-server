@@ -1,15 +1,10 @@
-for i in range(4): # enumerate elements in tuple
-   print(i)                     # otherwise print the value
+from flask import Flask
+from routes.users import users_bp
 
-doubles = [x * 2 for x in range(4)]
-print(doubles)                       # prints [0, 2, 4, 6]
-upper = [c.upper() for c in 'Hello']
-print(''.join(upper))                      # prints ['H', 'E', 'L', 'L', 'O']
+app = Flask(__name__)
 
-def add(x,y):
-    return x+y
+# Register the users blueprint
+app.register_blueprint(users_bp)
 
-print(add('Hello', 'World'))  # returns 'HelloWorld'
-print(add([1, 2], [3, 4]))    # returns [1, 2, 3, 4]
-
-print(add(4,50))
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000, debug=True)

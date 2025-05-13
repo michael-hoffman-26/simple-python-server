@@ -13,7 +13,7 @@ source simple-python-server/bin/activate  # On Linux/macOS
 # my_project_env\Scripts\activate  # On Windows
 
 # Step 3: Install packages
-pip install requests
+pip install -r requirements.txt
 
 # Step 4: Save installed packages to requirements.txt
 pip freeze > requirements.txt
