@@ -20,6 +20,14 @@ I used a repostory pattern, so it would be easy to replace from in memory to a r
 
 2. its better to use a vlidation Schema in the routes blueprint, using the marshmallow package its suitable over here.  
 
+3. this code is not 100% organized, and well working, there is a lot of improvement to do    
+I have used the best practices i now. used Cursor and AI tools as well.     
+It was really intersting task, I enjoyed.
+ Thank you
+
+ Michael Hoffman
+
+
 
 ## Installation
 
