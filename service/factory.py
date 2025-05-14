@@ -1,18 +1,47 @@
-from service.users import UserService
-from typing import Protocol
+from repositories.warehouse import WarehouseRepository as ConcreteWarehouseRepository
+from repositories.interfaces import IWarehouseRepository
+from service.warehouse import WarehouseService
 
-class UserRepository(Protocol):
-    """Protocol defining the interface for user repositories."""
-    pass
 
-def create_user_service(user_repository: UserRepository) -> UserService:
+# Singleton instances
+_warehouse_repository = None
+_warehouse_service = None
+
+def get_warehouse_repository() -> IWarehouseRepository:
     """
-    Factory function to create and return a UserService instance.
+    Returns a singleton instance of the WarehouseRepository.
+    This ensures we have only one repository instance across the application.
+    
+    Returns:
+        IWarehouseRepository: The singleton repository instance
+    """
+    global _warehouse_repository
+    if _warehouse_repository is None:
+        _warehouse_repository = ConcreteWarehouseRepository()
+    return _warehouse_repository
+
+def get_warehouse_service() -> WarehouseService:
+    """
+    Returns a singleton instance of the WarehouseService.
+    This ensures we have only one service instance across the application.
+    
+    Returns:
+        WarehouseService: The singleton service instance
+    """
+    global _warehouse_service
+    if _warehouse_service is None:
+        _warehouse_service = create_warehouse_service(get_warehouse_repository())
+    return _warehouse_service
+
+def create_warehouse_service(repository: IWarehouseRepository) -> WarehouseService:
+    """
+    Factory function to create and return a WarehouseService instance.
+    This allows for dependency injection and easier testing.
     
     Args:
-        user_repository: An instance of UserRepository to be used by the service
+        repository (IWarehouseRepository): The repository instance to use
         
     Returns:
-        UserService: A configured instance of UserService
+        WarehouseService: A new instance of WarehouseService
     """
-    return UserService(user_repository)
+    return WarehouseService(repository)

@@ -1,0 +1,36 @@
+from typing import Protocol
+
+class IWarehouseRepository(Protocol):
+    """Protocol defining the interface for warehouse repositories."""
+    def create_truck(self, truck_data: dict) -> int:
+        ...
+    
+    def get_truck(self, truck_id: int) -> dict:
+        ...
+    
+    def get_all_trucks(self) -> list:
+        ...
+    
+    def update_truck(self, truck_id: int, truck_data: dict) -> bool:
+        ...
+    
+    def delete_truck(self, truck_id: int) -> bool:
+        ...
+    
+    def create_package(self, length: float, width: float, height: float, truck_id: int | None) -> int:
+        ...
+    
+    def get_package(self, package_id: int) -> dict:
+        ...
+    
+    def get_all_packages(self) -> list:
+        ...
+    
+    def get_packages_by_truck(self, truck_id: int) -> list:
+        ...
+    
+    def update_package(self, package_id: int, package_data: dict) -> bool:
+        ...
+    
+    def delete_package(self, package_id: int) -> bool:
+        ... 

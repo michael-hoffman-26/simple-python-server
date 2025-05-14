@@ -4,14 +4,20 @@ A warehouse management system that handles package storage and shipping using tr
 
 ## Table of Contents
 - [Project Description](#project-description)
-- [Installation](#installation)
 - [Documentation](#documentation)
+- [Installation](#installation)
 
 ## Project Description
 Implemented a simple flask api server for managing a wharehouse.    
 
 ## Documentation
 Detailed documentation for **Work Item 1** can be found in the `Docs Work Item 1` directory at the root of this repository.
+
+### implemntation details
+Decided to use in memory store, instead of connecting to a real DB.    
+This would help me to saev time and make sure the code is in a high standrat.   
+I used a repostory pattern, so it would be easy to replace from in memory to a real DB connection in the future
+
 
 ## Installation
 

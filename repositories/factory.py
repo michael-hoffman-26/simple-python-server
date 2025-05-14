@@ -1,11 +1,12 @@
-from repositories.users import UserRepository
+from repositories.warehouse import WarehouseRepository
+from repositories.interfaces import IWarehouseRepository
 
-def create_user_repository() -> UserRepository:
+def create_warehouse_repository() -> IWarehouseRepository:
     """
-    Factory function to create and return a UserRepository instance.
+    Factory function to create and return a WarehouseRepository instance.
     This allows for dependency injection and easier testing.
     
     Returns:
-        UserRepository: A new instance of UserRepository
+        IWarehouseRepository: A new instance of WarehouseRepository implementing the interface
     """
-    return UserRepository()
+    return WarehouseRepository()
