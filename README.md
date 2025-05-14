@@ -1,23 +1,49 @@
-# simple-python-server
-Simple python server
+# Digital Ops home Assingment
+A warehouse management system that handles package storage and shipping using trucks with limited cargo space. The system ensures efficient loading by requiring packages to fill at least 80% of a truck's volume before shipment, with optional bin packing algorithms for optimal arrangement.
 
 
-local setup
+## Table of Contents
+- [Project Description](#project-description)
+- [Installation](#installation)
+- [Documentation](#documentation)
 
+## Project Description
+Implemented a simple flask api server for managing a wharehouse.    
 
-# Step 1: Create a virtual environment
+## Documentation
+Detailed documentation for **Work Item 1** can be found in the `Docs Work Item 1` directory at the root of this repository.
+
+## Installation
+
+### Local Setup
+
+1. Create a virtual environment:
+```bash
 python3 -m venv simple-python-server
+```
 
-# Step 2: Activate the virtual environment
-source simple-python-server/bin/activate  # On Linux/macOS
-# my_project_env\Scripts\activate  # On Windows
+2. Activate the virtual environment:
+```bash
+# On Linux/macOS
+source simple-python-server/bin/activate
 
-# Step 3: Install packages
+# On Windows
+my_project_env\Scripts\activate
+```
+
+3. Install required packages:
+```bash
 pip install -r requirements.txt
+```
 
-# Step 4: Save installed packages to requirements.txt
+4. Save installed packages to requirements.txt:
+```bash
 pip freeze > requirements.txt
+```
 
-
-<!-- wath mode, usig nodemon for python -->
-node_modules/.bin/nodemon --exec python3 main.py  --ignore fake_fruit.json  
+5. 
+To run the server with hot-reloading enabled:
+```bash
+nvm use
+npm i
+node_modules/.bin/nodemon --exec python3 main.py 
