@@ -14,9 +14,11 @@ Implemented a simple flask api server for managing a wharehouse.
 Detailed documentation for **Work Item 1** can be found in the `Docs Work Item 1` directory at the root of this repository.
 
 ### implemntation details
-Decided to use in memory store, instead of connecting to a real DB.    
+1. Decided to use in memory store, instead of connecting to a real DB.    
 This would help me to saev time and make sure the code is in a high standrat.   
-I used a repostory pattern, so it would be easy to replace from in memory to a real DB connection in the future
+I used a repostory pattern, so it would be easy to replace from in memory to a real DB connection in the future  
+
+2. its better to use a vlidation Schema in the routes blueprint, using the marshmallow package its suitable over here.  
 
 
 ## Installation

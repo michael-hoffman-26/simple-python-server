@@ -43,4 +43,21 @@ def delete_truck(truck_id):
         response = make_response(f'DELETED TRUCK ID: {truck_id}', 204)
     else:
         response = make_response(jsonify({'error': 'Truck not found'}), 404)
+    return response
+
+@trucks_bp.route('/api/trucks/assign', methods=['POST'])
+def assign_trucks():
+    data = request.get_json()
+    if not data or 'packagesIds' not in data:
+        return make_response(jsonify({'error': 'Request body must contain packagesIds field'}), 400)
+    
+    packages_ids = data['packagesIds']
+    if not isinstance(packages_ids, list):
+        return make_response(jsonify({'error': 'packagesIds must be a list'}), 400)
+    
+    result = truck_service.assign_trucks(packages_ids)
+    if result:
+        response = make_response(jsonify({'message': 'Trucks assigned successfully', 'packagesIds': packages_ids}), 200)
+    else:
+        response = make_response(jsonify({'error': 'Failed to assign trucks'}), 400)
     return response 
