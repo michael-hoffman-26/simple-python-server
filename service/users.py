@@ -1,6 +1,6 @@
 from flask import request
 from typing import Dict, List, Optional, Any, Union
-from repositories.users import UserRepository
+from repository.user_interface import UserRepository
 
 class UserService:
     def __init__(self, user_repository: UserRepository) -> None:

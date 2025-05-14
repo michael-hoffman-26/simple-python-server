@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword # Root user password
+      MYSQL_DATABASE: mydatabase # Default database name
+      MYSQL_USER: myuser # Regular user
+      MYSQL_PASSWORD: mypassword # Regular user password
+    ports:
+      - "3306:3306" # MySQL default port
+

@@ -1,8 +1,10 @@
-class UserRepository:
+from repository.user_interface import UserRepository
+
+class UserInMemoryRepo(UserRepository):
     def __init__(self):
         # Simulating an in-memory database
         self._users = {}
-        print("UserRepository initialized")
+        print("UserInMemoryRepo initialized")
 
     def create_user(self, user_data):
         """Create a new user"""

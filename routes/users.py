@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, request, make_response
-from repositories.factory import create_user_repository
+from repository.factory import create_user_repository
 from service.factory import create_user_service
 
 users_bp = Blueprint('users', __name__)
